@@ -1,6 +1,7 @@
 package rentcompany;
 
 import rentcompany.car.Car;
+import rentcompany.car.CarFactory;
 
 public class RentCompany extends CarFactory {
 
