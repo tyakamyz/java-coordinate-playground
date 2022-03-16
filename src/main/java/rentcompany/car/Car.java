@@ -1,6 +1,11 @@
 package rentcompany.car;
 
 public abstract class Car {
+
+    double tripDistance;
+    double distancePerLiter;
+    String name;
+
     /**
      * 리터당 이동 거리. 즉, 연비
      */

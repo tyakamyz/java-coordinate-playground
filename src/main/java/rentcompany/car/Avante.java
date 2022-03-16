@@ -2,22 +2,24 @@ package rentcompany.car;
 
 public class Avante extends Car {
 
-    public Avante(int distance){
-
+    public Avante(double tripDistance){
+        this.tripDistance = tripDistance;
+        this.distancePerLiter = 15;
+        this.name = "Avante";
     }
 
     @Override
     public double getDistancePerLiter(){
-        return 0;
+        return this.distancePerLiter;
     }
 
     @Override
     public double getTripDistance(){
-        return 0;
+        return this.tripDistance;
     }
 
     @Override
     public String getName(){
-        return null;
+        return name;
     }
 }

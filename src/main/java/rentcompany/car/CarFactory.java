@@ -1,6 +1,4 @@
-package rentcompany;
-
-import rentcompany.car.Car;
+package rentcompany.car;
 
 public abstract class CarFactory {
 

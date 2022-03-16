@@ -1,21 +1,28 @@
 package rentcompany;
 
 import rentcompany.car.Car;
+import rentcompany.car.CarFactory;
+import rentcompany.car.Cars;
 
 public class RentCompany extends CarFactory {
 
-    public static RentCompany create(){
+    private final Cars cars;
 
-        return null;
+    public RentCompany() {
+        this.cars = new Cars();
+    }
+
+    public static RentCompany create(){
+        return new RentCompany();
     }
 
     @Override
     public void addCar(Car car){
-
+        this.cars.add(car);
     }
 
     @Override
     public String generateReport(){
-        return null;
+        return this.cars.getReport();
     }
 }
