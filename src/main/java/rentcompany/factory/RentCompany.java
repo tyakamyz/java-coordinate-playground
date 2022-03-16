@@ -1,4 +1,4 @@
-package rentcompany;
+package rentcompany.factory;
 
 import rentcompany.car.Car;
 import rentcompany.car.Cars;
