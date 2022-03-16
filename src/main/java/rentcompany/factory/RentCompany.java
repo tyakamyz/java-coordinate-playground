@@ -1,10 +1,9 @@
-package rentcompany;
+package rentcompany.factory;
 
 import rentcompany.car.Car;
-import rentcompany.car.CarFactory;
 import rentcompany.car.Cars;
 
-public class RentCompany extends CarFactory {
+public class RentCompany {
 
     private final Cars cars;
 
@@ -16,12 +15,10 @@ public class RentCompany extends CarFactory {
         return new RentCompany();
     }
 
-    @Override
     public void addCar(Car car){
         this.cars.add(car);
     }
 
-    @Override
     public String generateReport(){
         return this.cars.getReport();
     }
