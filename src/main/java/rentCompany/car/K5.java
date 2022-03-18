@@ -1,4 +1,4 @@
-package rentcompany.car;
+package rentCompany.car;
 
 public class K5 extends Car {
 

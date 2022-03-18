@@ -1,7 +1,7 @@
-package rentcompany.factory;
+package rentCompany.factory;
 
-import rentcompany.car.Car;
-import rentcompany.car.Cars;
+import rentCompany.car.Car;
+import rentCompany.car.Cars;
 
 public class RentCompany {
 

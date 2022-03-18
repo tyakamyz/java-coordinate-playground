@@ -1,11 +1,11 @@
-package rentcompany.car;
+package rentCompany.car;
 
-public class Avante extends Car {
+public class Sonata extends Car {
 
-    public Avante(double tripDistance){
+    public Sonata(double tripDistance){
         this.tripDistance = tripDistance;
-        this.distancePerLiter = 15;
-        this.name = "Avante";
+        this.distancePerLiter = 10;
+        this.name = "Sonata";
     }
 
     @Override
