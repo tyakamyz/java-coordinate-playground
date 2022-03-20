@@ -7,8 +7,8 @@ import coordinateCalculator.util.StringUtil;
 
 import java.io.IOException;
 
-public class StraightLine extends CoordinateCalculator {
-    public StraightLine() {
+public class Line extends CoordinateCalculator {
+    public Line() {
         this.points = new Points();
     }
 
@@ -25,8 +25,8 @@ public class StraightLine extends CoordinateCalculator {
     }
 
     public static void main(String[] args) throws IOException {
-        StraightLine straightLine = new StraightLine();
-        straightLine.addPoints(StringUtil.coordinatesSplit(InputView.inputCoordinate()));
-        ResultView.straightLineResultMessage(straightLine.getCalculationResult());
+        Line line = new Line();
+        line.addPoints(StringUtil.coordinatesSplit(InputView.inputCoordinate()));
+        ResultView.straightLineResultMessage(line.getCalculationResult());
     }
 }
