@@ -13,4 +13,12 @@ public class Point {
         this.x = x;
         this.y = y;
     }
+
+    public double getPointX() {
+        return x;
+    }
+
+    public double getPointY() {
+        return y;
+    }
 }
