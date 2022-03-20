@@ -14,7 +14,7 @@ public class CoordinateCalculator {
         this.points = new Points();
     }
 
-    public CoordinateCalculator create(){
+    public static CoordinateCalculator create(){
         return new CoordinateCalculator();
     }
 
