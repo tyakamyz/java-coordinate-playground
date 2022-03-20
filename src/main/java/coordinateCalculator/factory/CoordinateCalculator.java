@@ -5,18 +5,11 @@ import coordinateCalculator.domain.Points;
 
 import java.util.List;
 
-public class CoordinateCalculator {
-    private final int STRAIGHT_LINE = 2;
+public abstract class CoordinateCalculator {
+    public final int STRAIGHT_LINE = 2;
+    public final int QUADRANGLE = 4;
 
-    private final Points points;
-
-    public CoordinateCalculator() {
-        this.points = new Points();
-    }
-
-    public static CoordinateCalculator create(){
-        return new CoordinateCalculator();
-    }
+    public Points points;
 
     public void addPoint(Point point){
         points.add(point);
@@ -28,14 +21,5 @@ public class CoordinateCalculator {
         }
     }
 
-    public Double getCalculationResult(){
-
-        int coordinateCount = points.getSize();
-
-        if(coordinateCount == STRAIGHT_LINE){
-            return points.getStraightLine();
-        }
-
-        return null;
-    }
+    public abstract Double getCalculationResult();
 }
