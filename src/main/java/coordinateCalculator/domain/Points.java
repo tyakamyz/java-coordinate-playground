@@ -34,4 +34,12 @@ public class Points {
         Point pointB = points.get(1);
         return Math.sqrt(Math.pow(pointA.getPointX() - pointB.getPointX(),2) + Math.pow(pointA.getPointY() - pointB.getPointY(),2));
     }
+
+    public Double getQuadrangle() {
+        Point pointA = points.get(0);
+        Point pointB = points.get(1);
+        Point pointC = points.get(2);
+        Point pointD = points.get(3);
+        return Math.sqrt(Math.pow(pointA.getPointX() - pointB.getPointX(),2) + Math.pow(pointA.getPointY() - pointB.getPointY(),2));
+    }
 }

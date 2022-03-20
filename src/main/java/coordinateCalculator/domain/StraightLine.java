@@ -6,12 +6,27 @@ import coordinateCalculator.ui.ResultView;
 import coordinateCalculator.util.StringUtil;
 
 import java.io.IOException;
-import java.util.List;
 
-public class StraightLine {
+public class StraightLine extends CoordinateCalculator {
+    public StraightLine() {
+        this.points = new Points();
+    }
+
+    @Override
+    public Double getCalculationResult(){
+
+        int coordinateCount = points.getSize();
+
+        if(coordinateCount == STRAIGHT_LINE){
+            return points.getStraightLine();
+        }
+
+        throw new IllegalArgumentException("좌표의 개수를 확인해주세요");
+    }
+
     public static void main(String[] args) throws IOException {
-        CoordinateCalculator coordinateCalculator = CoordinateCalculator.create();
-        coordinateCalculator.addPoints(StringUtil.coordinatesSplit(InputView.inputCoordinate()));
-        ResultView.straightLineResultMessage(coordinateCalculator.getCalculationResult());
+        StraightLine straightLine = new StraightLine();
+        straightLine.addPoints(StringUtil.coordinatesSplit(InputView.inputCoordinate()));
+        ResultView.straightLineResultMessage(straightLine.getCalculationResult());
     }
 }
