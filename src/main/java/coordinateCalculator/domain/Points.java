@@ -28,18 +28,15 @@ public class Points {
         return points.size();
     }
 
-    public double getStraightLine() {
-        // 제곱근((A.x - B.x)^제곱 + (A.y - B.y)^제곱)
-        Point pointA = points.get(0);
-        Point pointB = points.get(1);
-        return Math.sqrt(Math.pow(pointA.getPointX() - pointB.getPointX(),2) + Math.pow(pointA.getPointY() - pointB.getPointY(),2));
-    }
-
     public Double getQuadrangle() {
         Point pointA = points.get(0);
         Point pointB = points.get(1);
         Point pointC = points.get(2);
         Point pointD = points.get(3);
         return Math.sqrt(Math.pow(pointA.getPointX() - pointB.getPointX(),2) + Math.pow(pointA.getPointY() - pointB.getPointY(),2));
+    }
+
+    public Point get(int i) {
+        return points.get(i);
     }
 }
