@@ -18,4 +18,12 @@ class LineTest {
         assertThat(line.getCalculationResult()).isEqualTo(6.403124, offset(0.00099));
     }
 
+    @Test
+    public void getStraightLineTest(){
+        Line line = new Line();
+        line.addPoints(StringUtil.coordinatesSplit("(10,10)-(14,15)"));
+
+        assertEquals(line.getStraightLine(), 6.403124, 0.001);
+        assertThat(line.getStraightLine()).isEqualTo(6.403124, offset(0.00099));
+    }
 }
