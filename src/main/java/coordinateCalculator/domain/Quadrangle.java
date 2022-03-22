@@ -29,8 +29,12 @@ public class Quadrangle extends CoordinateCalculator {
         throw new IllegalArgumentException("좌표값이 올바르지 않습니다.");
     }
 
-    public void addLine(Line line){
-        lines.addLine(line);
+    public void setLinesToLinesLength(){
+        lines.setLinesToLinesLength();
+    }
+
+    public void deduplicationLinesLength(){
+        lines.deduplicationLinesLength();
     }
 
     public Line createLine(Point pointA, Point pointB){
@@ -49,11 +53,11 @@ public class Quadrangle extends CoordinateCalculator {
     }
 
     public static void main(String[] args) throws IOException {
-
-        /*Quadrangle quadrangle = new Quadrangle();
-
-        Line line = new Line();
-        line.addPoints(StringUtil.coordinatesSplit(InputView.inputCoordinate()));
-        ResultView.straightLineResultMessage(line.getCalculationResult());*/
+        Quadrangle quadrangle = new Quadrangle();
+        quadrangle.addPoints(StringUtil.coordinatesSplit(InputView.inputCoordinate()));
+        quadrangle.createLines();
+        quadrangle.setLinesToLinesLength();
+        quadrangle.deduplicationLinesLength();
+        ResultView.quadrangleResultMessage(quadrangle.getCalculationResult());
     }
 }
