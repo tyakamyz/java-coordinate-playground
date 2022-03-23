@@ -18,11 +18,11 @@ public class Quadrangle extends CoordinateCalculator {
 
     @Override
     public Double getCalculationResult() {
-        if(lines.getLinesLength().size() == RECTANGLE_LINE_COUNT){
+        if(points.getSize() == QUADRANGLE_POINT_COUNT && lines.getLinesLength().size() == RECTANGLE_LINE_COUNT){
             return lines.getLinesLength().get(0) * lines.getLinesLength().get(1);
         }
 
-        if(lines.getLinesLength().size() == SQUARE_LINE_COUNT){
+        if(points.getSize() == QUADRANGLE_POINT_COUNT && lines.getLinesLength().size() == SQUARE_LINE_COUNT){
             return lines.getLinesLength().get(0) * lines.getLinesLength().get(0);
         }
 
@@ -37,19 +37,11 @@ public class Quadrangle extends CoordinateCalculator {
         lines.deduplicationLinesLength();
     }
 
-    public Line createLine(Point pointA, Point pointB){
-        Line line = new Line();
-        line.addPoint(pointA);
-        line.addPoint(pointB);
-
-        return line;
-    }
-
     public void createLines(){
-        lines.addLine(createLine(points.get(0), points.get(1)));
-        lines.addLine(createLine(points.get(1), points.get(2)));
-        lines.addLine(createLine(points.get(2), points.get(3)));
-        lines.addLine(createLine(points.get(3), points.get(0)));
+        lines.addLine(new Line(points.get(0), points.get(1)));
+        lines.addLine(new Line(points.get(1), points.get(2)));
+        lines.addLine(new Line(points.get(2), points.get(3)));
+        lines.addLine(new Line(points.get(3), points.get(0)));
     }
 
     public static void main(String[] args) throws IOException {

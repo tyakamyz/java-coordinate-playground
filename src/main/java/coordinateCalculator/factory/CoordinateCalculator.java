@@ -7,6 +7,8 @@ import java.util.List;
 
 public abstract class CoordinateCalculator {
     public final int STRAIGHT_POINT_COUNT = 2;
+    public final int QUADRANGLE_POINT_COUNT = 4;
+    public final int TRIANGLE_POINT_COUNT = 3;
     public final int RECTANGLE_LINE_COUNT = 2;
     public final int SQUARE_LINE_COUNT = 1;
 

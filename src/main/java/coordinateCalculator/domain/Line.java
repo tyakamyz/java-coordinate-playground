@@ -12,6 +12,12 @@ public class Line extends CoordinateCalculator {
         this.points = new Points();
     }
 
+    public Line(Point pointA, Point pointB){
+        this.points = new Points();
+        points.add(pointA);
+        points.add(pointB);
+    }
+
     @Override
     public Double getCalculationResult(){
 
