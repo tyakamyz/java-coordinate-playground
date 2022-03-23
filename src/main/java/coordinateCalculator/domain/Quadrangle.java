@@ -18,11 +18,11 @@ public class Quadrangle extends CoordinateCalculator {
 
     @Override
     public Double getCalculationResult() {
-        if(lines.getLinesLength().size() == RECTANGLE_LINE_COUNT){
+        if(points.getSize() == QUADRANGLE_POINT_COUNT && lines.getLinesLength().size() == RECTANGLE_LINE_COUNT){
             return lines.getLinesLength().get(0) * lines.getLinesLength().get(1);
         }
 
-        if(lines.getLinesLength().size() == SQUARE_LINE_COUNT){
+        if(points.getSize() == QUADRANGLE_POINT_COUNT && lines.getLinesLength().size() == SQUARE_LINE_COUNT){
             return lines.getLinesLength().get(0) * lines.getLinesLength().get(0);
         }
 
