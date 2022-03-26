@@ -24,16 +24,14 @@ public class Points {
         this.points.add(new Point(Integer.parseInt(coordinate.split(",")[0]), Integer.parseInt(coordinate.split(",")[1])));
     }
 
-    public int getSize() {
-        return points.size();
+    public void addPoints(List<String> coordinates){
+        for(String coordinate : coordinates){
+            add(coordinate);
+        }
     }
 
-    public Double getQuadrangle() {
-        Point pointA = points.get(0);
-        Point pointB = points.get(1);
-        Point pointC = points.get(2);
-        Point pointD = points.get(3);
-        return Math.sqrt(Math.pow(pointA.getPointX() - pointB.getPointX(),2) + Math.pow(pointA.getPointY() - pointB.getPointY(),2));
+    public int getSize() {
+        return points.size();
     }
 
     public Point get(int i) {

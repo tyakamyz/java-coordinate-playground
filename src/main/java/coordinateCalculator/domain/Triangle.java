@@ -1,22 +1,20 @@
 package coordinateCalculator.domain;
 
-import coordinateCalculator.factory.CoordinateCalculator;
+import coordinateCalculator.factory.FigureFactory;
 import coordinateCalculator.ui.InputView;
 import coordinateCalculator.ui.ResultView;
 import coordinateCalculator.util.StringUtil;
 
 import java.io.IOException;
+import java.util.List;
 
-public class Triangle extends CoordinateCalculator {
+public class Triangle extends Figure {
 
-    public Lines lines;
-
-    public Triangle() {
-        this.points = new Points();
+    public Triangle(Points points) {
+        this.points = points;
         this.lines = new Lines();
     }
 
-    @Override
     public Double getCalculationResult() {
         if(points.getSize() == TRIANGLE_POINT_COUNT){
             //헤론의 공식
@@ -35,6 +33,7 @@ public class Triangle extends CoordinateCalculator {
         lines.deduplicationLinesLength();
     }
 
+    @Override
     public void createLines(){
         lines.addLine(new Line(points.get(0), points.get(1)));
         lines.addLine(new Line(points.get(1), points.get(2)));
@@ -42,8 +41,12 @@ public class Triangle extends CoordinateCalculator {
     }
 
     public static void main(String[] args) throws IOException {
-        Triangle triangle = new Triangle();
-        triangle.addPoints(StringUtil.coordinatesSplit(InputView.inputCoordinate()));
+
+        Points points = new Points();
+        points.addPoints(StringUtil.coordinatesSplit(InputView.inputCoordinate()));
+
+        Figure triangle = FigureFactory.getInstance(points);
+
         triangle.createLines();
         triangle.setLinesToLinesLength();
         triangle.deduplicationLinesLength();
