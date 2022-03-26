@@ -1,21 +1,36 @@
 package coordinateCalculator.domain;
 
-import coordinateCalculator.factory.CoordinateCalculator;
+import coordinateCalculator.factory.FigureFactory;
 import coordinateCalculator.ui.InputView;
 import coordinateCalculator.ui.ResultView;
 import coordinateCalculator.util.StringUtil;
 
 import java.io.IOException;
+import java.util.List;
 
-public class Line extends CoordinateCalculator {
+public class Line extends Figure {
+
+    public Figure create(Points points) {
+        return new Line(points);
+    }
+
     public Line() {
         this.points = new Points();
+    }
+
+    public Line(Points points) {
+        this.points = points;
     }
 
     public Line(Point pointA, Point pointB){
         this.points = new Points();
         points.add(pointA);
         points.add(pointB);
+    }
+
+    @Override
+    public void createLines(){
+        lines.addLine(this);
     }
 
     @Override
@@ -38,8 +53,11 @@ public class Line extends CoordinateCalculator {
     }
 
     public static void main(String[] args) throws IOException {
-        Line line = new Line();
-        line.addPoints(StringUtil.coordinatesSplit(InputView.inputCoordinate()));
+
+        Points points = new Points();
+        points.addPoints(StringUtil.coordinatesSplit(InputView.inputCoordinate()));
+
+        Figure line = FigureFactory.getInstance(points);
         ResultView.straightLineResultMessage(line.getCalculationResult());
     }
 }
